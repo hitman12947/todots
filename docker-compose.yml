@@ -1,0 +1,11 @@
+services:
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: "todos"
+      MYSQL_USER: "rahul"
+      MYSQL_PASSWORD: "rahul@123"
+      MYSQL_ROOT_PASSWORD: "password"
+    ports:
+      - "3306:3306"
