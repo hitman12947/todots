@@ -1,11 +1,17 @@
+version: "3.1"
 services:
-  mysql:
-    image: mysql
+  db-service:
+    image: postgres
     restart: always
     environment:
-      MYSQL_DATABASE: "todos"
-      MYSQL_USER: "rahul"
-      MYSQL_PASSWORD: "rahul@123"
-      MYSQL_ROOT_PASSWORD: "password"
+      POSTGRES_DB: "todos"
+      POSTGRES_USER: "rahul"
+      POSTGRES_PASSWORD: "rahul@123"
+      # MYSQL_ROOT_PASSWORD: "password"
+
+  web-app:
+    build: .
     ports:
-      - "3306:3306"
+      - "8000:8000"
+    depends_on:
+      - db-service

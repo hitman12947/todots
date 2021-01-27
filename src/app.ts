@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 import { json } from "body-parser";
 import routes from "./api/routes";
-import { createConnection } from "typeorm";
 
 const app = express();
 
